@@ -4,6 +4,7 @@ import { Sparkles, Camera, X, Calendar, ChevronLeft, ChevronRight, Eye } from 'l
 import AestheticImage from './AestheticImage';
 import { polaroidPhotos } from '../data/gallery';
 import { soundEngine } from '../utils/audioEngine';
+import { getAssetUrl } from '../utils/assets';
 
 export default function ScreenMuseum({ onUnlockSecret, isSecretUnlocked }) {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
@@ -168,7 +169,7 @@ export default function ScreenMuseum({ onUnlockSecret, isSecretUnlocked }) {
               {/* Full Unclipped Photo Area */}
               <div className="relative bg-[#0d0c10] flex items-center justify-center p-4 sm:p-6 overflow-hidden min-h-[280px] sm:min-h-[380px]">
                 <img
-                  src={selectedPhoto.image}
+                  src={getAssetUrl(selectedPhoto.image)}
                   alt={selectedPhoto.title}
                   className="max-h-[50vh] sm:max-h-[55vh] w-auto max-w-full object-contain rounded-lg photo-grade-cinematic shadow-2xl"
                 />

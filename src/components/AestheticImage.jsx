@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Camera, Maximize2 } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 export default function AestheticImage({
   src,
@@ -18,6 +19,7 @@ export default function AestheticImage({
 }) {
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const resolvedSrc = getAssetUrl(src);
 
   return (
     <div
@@ -44,7 +46,7 @@ export default function AestheticImage({
 
           {/* Color Graded Image with Centered Face Framing */}
           <img
-            src={src}
+            src={resolvedSrc}
             alt={alt}
             onLoad={() => setIsLoaded(true)}
             onError={() => setHasError(true)}

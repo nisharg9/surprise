@@ -8,6 +8,7 @@
  */
 
 import { soundtrack } from '../data/songs';
+import { getAssetUrl } from './assets';
 
 class SoundEngine {
   constructor() {
@@ -172,7 +173,8 @@ class SoundEngine {
       });
     }
 
-    this.audioElement.src = this.currentTrackSrc;
+    const resolvedTrackSrc = getAssetUrl(this.currentTrackSrc);
+    this.audioElement.src = resolvedTrackSrc;
     this.audioElement.volume = this.volume;
 
     try {
