@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16232b" />
+      <stop offset="50%" stop-color="#141318" />
+      <stop offset="100%" stop-color="#081116" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#0089ba" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#0089ba" stop-opacity="0" />
+    </radialGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.08 0"/>
+    </filter>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bgGrad)" />
+  <rect width="800" height="1000" fill="url(#glow)" />
+  <rect width="800" height="1000" filter="url(#noise)" opacity="0.6"/>
+  
+  <!-- Subtle aesthetic framing -->
+  <rect x="30" y="30" width="740" height="940" fill="none" stroke="#0089ba" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4,4" rx="12" />
+  <rect x="40" y="40" width="720" height="920" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" rx="8" />
+  
+  <!-- Camera icon placeholder -->
+  <g transform="translate(360, 360)">
+    <circle cx="40" cy="40" r="55" fill="rgba(255,255,255,0.03)" stroke="#0089ba" stroke-opacity="0.4" stroke-width="1.5" />
+    <path d="M25 32 L32 32 L35 27 L45 27 L48 32 L55 32 C58 32 60 34 60 37 L60 53 C60 56 58 58 55 58 L25 58 C22 58 20 56 20 53 L20 37 C20 34 22 32 25 32 Z" fill="none" stroke="#0089ba" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="40" cy="45" r="7" fill="none" stroke="#0089ba" stroke-width="2"/>
+    <circle cx="53" cy="37" r="1.5" fill="#0089ba"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="400" y="520" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', serif" font-size="34" font-weight="600" fill="#f4efe6" letter-spacing="4">Future Chapter</text>
+  <text x="400" y="565" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" fill="#c9a875" letter-spacing="1.5">More Memories Await</text>
+  
+  <rect x="250" y="615" width="300" height="36" rx="18" fill="rgba(255,255,255,0.04)" stroke="#0089ba" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="400" y="638" text-anchor="middle" font-family="'Caveat', cursive" font-size="18" fill="#e2d9cc" letter-spacing="0.5">Replace in /assets/vanshika/future.jpg</text>
+  
+  <text x="400" y="910" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="rgba(255,255,255,0.25)" letter-spacing="2">PERSONAL SCRAPBOOK ARCHIVE</text>
+</svg>

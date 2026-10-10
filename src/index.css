@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-handwriting: 'Caveat', cursive;
+  }
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* Film Grain Overlay */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Subtle Paper Texture */
+.paper-texture {
+  background-color: #17161b;
+  background-image: radial-gradient(#26242c 0.75px, transparent 0.75px), radial-gradient(#26242c 0.75px, #17161b 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.letter-paper {
+  background-color: #f7f3eb;
+  background-image: 
+    linear-gradient(to right, rgba(200, 180, 150, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 180, 150, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0c10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2833;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a875;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(22, 21, 28, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 239, 230, 0.08);
+}
+
+.glass-panel-gold {
+  background: rgba(30, 27, 23, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Polaroid Card Shadow */
+.polaroid-shadow {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Candle flame animation */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 15px #ffaa40) drop-shadow(0 0 35px #ff5500);
+  }
+  25% {
+    transform: scale(1.08, 0.95) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 20px #ffbb55) drop-shadow(0 0 45px #ff6600);
+  }
+  50% {
+    transform: scale(0.95, 1.05) rotate(-2deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 12px #ff9933) drop-shadow(0 0 30px #ff4400);
+  }
+  75% {
+    transform: scale(1.04, 1.02) rotate(1deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 18px #ffb347) drop-shadow(0 0 40px #ff5500);
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 1.8s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* Subtle Floating Animation */
+@keyframes softFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0.5deg); }
+}
+
+.animate-soft-float {
+  animation: softFloat 6s ease-in-out infinite;
+}
+
+/* Glow Pulse */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; filter: blur(30px); }
+  50% { opacity: 0.7; filter: blur(40px); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Tape effect */
+.washi-tape {
+  background: rgba(235, 222, 195, 0.75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+/* Cinematic Photo Color Grading */
+.photo-grade-cinematic {
+  filter: brightness(1.04) contrast(1.07) saturate(1.14) sepia(0.06);
+  transition: filter 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-grade-cinematic:hover {
+  filter: brightness(1.07) contrast(1.10) saturate(1.20) sepia(0.04);
+}
+
+.photo-warm-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+}
+
+.photo-vignette {
+  background: radial-gradient(circle at center, transparent 40%, rgba(10, 10, 14, 0.45) 100%);
+}
+
